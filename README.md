@@ -18,4 +18,4 @@ EA bulk Action happens in this sequence:
 
 
 ### Demo
-!(demo/-Bulk-Actions-LtngOut-1.gif)   
+![Demo](demo/-Bulk-Actions-LtngOut-1.gif)   
