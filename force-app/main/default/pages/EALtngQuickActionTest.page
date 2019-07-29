@@ -13,9 +13,9 @@ $(function() {
         });
         
         setTimeout(executeQuery, 1000);
-    });
+});
     
-    function executeQuery() {
+function executeQuery() {
         var query = {};
         query.statements = "{!JSENCODE($CurrentPage.parameters.query)}";
         var queryObj = {query: query.statements};
@@ -25,24 +25,18 @@ $(function() {
             data: JSON.stringify(queryObj),
             contentType: 'application/json',
             success: function(data) {
-            
-           $Lightning.use("c:EALtngOutApp", function() {
-           $Lightning.createComponent("c:EALtngOut",
-          { query : query.statements, results: JSON.stringify(data.results.records, null, 4)},
-          "lightningDiv",
-          function(cmp) {
-            console.log("Aura component EALtngOut created. Do something with it ");
-          }
-      );
-    });
-                
-                
-                
-                
-                 
+                $Lightning.use("c:EALtngOutApp", function() {
+                    $Lightning.createComponent("c:EALtngOut",
+                        { query : query.statements, results: JSON.stringify(data.results.records, null, 4)},
+                        "lightningDiv",
+                        function(cmp) {
+                            console.log("Aura component EALtngOut created. Do something with it ");
+                        }
+                    );
+                });
             },
-        });
-    }
+        }); 
+}
 
 
 
