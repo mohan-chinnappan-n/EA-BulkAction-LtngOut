@@ -1,0 +1,53 @@
+<apex:page >
+<apex:includeLightning />
+<div id="lightningDiv" />
+
+<apex:includeScript value="https://code.jquery.com/jquery-3.1.0.min.js"/>
+
+ 
+<script>
+
+$(function() {
+        $.ajaxSetup({
+            headers: {"Authorization": 'Bearer {!$Api.Session_ID}'}
+        });
+        
+        setTimeout(executeQuery, 1000);
+    });
+    
+    function executeQuery() {
+        var query = {};
+        query.statements = "{!JSENCODE($CurrentPage.parameters.query)}";
+        var queryObj = {query: query.statements};
+        $.ajax({
+            type: 'POST',
+            url: '/services/data/v45.0/wave/query',
+            data: JSON.stringify(queryObj),
+            contentType: 'application/json',
+            success: function(data) {
+            
+           $Lightning.use("c:EALtngOutApp", function() {
+           $Lightning.createComponent("c:EALtngOut",
+          { query : query.statements, results: JSON.stringify(data.results.records, null, 4)},
+          "lightningDiv",
+          function(cmp) {
+            console.log("Aura component EALtngOut created. Do something with it ");
+          }
+      );
+    });
+                
+                
+                
+                
+                 
+            },
+        });
+    }
+
+
+
+    
+     
+
+</script>
+</apex:page>

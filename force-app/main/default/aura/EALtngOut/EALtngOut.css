@@ -1,0 +1,18 @@
+.THIS.query {
+    background-color: black;
+    color:white;
+    margin:10px;
+    padding:10px;
+    border-radius: 10px;
+    opacity: .8;
+}
+
+.THIS.results {
+    background-color: steelblue;
+    color:white;
+    margin:10px;
+    padding:10px;
+    border-radius: 10px;
+    opacity: .8;
+}
+

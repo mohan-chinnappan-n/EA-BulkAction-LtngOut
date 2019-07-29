@@ -1,0 +1,18 @@
+<aura:component>
+    <aura:attribute name="query" type="String" />
+    <aura:attribute name="results" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <h3>SAQL</h3>
+    <textarea class="query" rows="2" cols="80" >
+        {!v.query}
+    
+    </textarea>
+    <hr/>
+    <h3>Results</h3>
+    <textarea class="results" rows="2" cols="80" >
+        {!v.results}
+    
+    </textarea>
+
+
+</aura:component>
