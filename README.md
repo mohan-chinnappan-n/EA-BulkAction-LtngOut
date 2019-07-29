@@ -14,7 +14,7 @@ EA bulk Action happens in this sequence:
     - EALtngQuickActionTest.page make POST call to /services/data/v45.0/wave/query with query we got
     - EALtngQuickActionTest.page uses Lightning Out feature to createComponent EALtngOut.cmp via EALtngOutApp.app. 
     - And in this process, the Lighting component gets SAQL query as well as the result of that SAQL query
-    - EALtngOut.cmp can now create records or do any bulk action base on the results of the SAQL query returned by the EA
+    - EALtngOut.cmp can now create records or do any bulk actions based on the results of the SAQL query returned by the EA
 
 
 ### Demo
